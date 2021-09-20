@@ -1,28 +1,62 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div class="container">
+    <h1><u>Calculator</u></h1>
+    <div class="mb-3">
+      <label for="operand1" class="form-label">Enter first number:</label>
+      <input
+        type="text"
+        class="form-control w-10"
+        id="operand1"
+        v-model="operand1"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="operand2" class="form-label">Enter second number:</label>
+      <input
+        type="text"
+        class="form-control w-10"
+        id="operand2"
+        v-model="operand2"
+      />
+    </div>
+
+    <OpButtonGroup v-model="operation" />
+
+    <div class="mb-3">
+      <label for="result" class="form-label">Result:</label>
+      <input
+        class="form-control w-10"
+        id="result"
+        type="text"
+        :value="result"
+        readonly
+      />
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import OpButtonGroup from "./components/OpButtonGroup.vue";
 
 export default {
-  name: "App",
+  data() {
+    return {
+      operand1: 0,
+      operand2: 0,
+      operation: "+",
+      result: 0,
+    };
+  },
+
   components: {
-    HelloWorld,
+    OpButtonGroup,
   },
 };
 </script>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style>
+.w-10 {
+  width: 10% !important;
 }
 </style>
