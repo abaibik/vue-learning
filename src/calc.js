@@ -40,6 +40,6 @@ export default function calc(a, b, op) {
   }
 
   if (op === "^") {
-    return 8;
+    return Math.pow(a, b);
   }
 }
