@@ -44,6 +44,6 @@ export default function calc(a, b, op) {
   }
 
   if (op === "mod") {
-    return 1;
+    return Math.trunc(a / b);
   }
 }
