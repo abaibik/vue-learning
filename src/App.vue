@@ -33,24 +33,30 @@
         readonly
       />
     </div>
+
+    <CheckBox v-model="keyboardVisible" />
   </div>
 </template>
 
 <script>
 import OpButtonGroup from "./components/OpButtonGroup.vue";
 import calc from "./calc.js";
+import CheckBox from "./components/CheckBox.vue";
 
 export default {
+  name: "App",
   data() {
     return {
       operand1: 0,
       operand2: 0,
       operation: "+",
+      keyboardVisible: false,
     };
   },
 
   components: {
     OpButtonGroup,
+    CheckBox,
   },
 
   computed: {

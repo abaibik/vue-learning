@@ -1,11 +1,12 @@
 <template>
-  <div class="form-check">
+  <div class="mb-3 form-check">
     <input
       class="form-check-input"
       type="checkbox"
       value=""
       id="flexCheckDefault"
-      :checked="checked"
+      v-model="checked"
+      @change="$emit('change', !checked)"
     />
     <label class="form-check-label" for="flexCheckDefault">
       On-screen keyboard
@@ -18,6 +19,10 @@ export default {
   name: "CheckBox",
   props: {
     checked: Boolean,
+  },
+  model: {
+    prop: "checked",
+    event: "change",
   },
 };
 </script>
