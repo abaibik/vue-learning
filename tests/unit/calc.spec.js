@@ -12,6 +12,7 @@ describe("calc", () => {
     [3, 2, "/", 1.5],
     [3, 0, "/", Infinity],
     ["1", "2", "+", 3],
+    [2, 3, "^", 8],
   ];
 
   for (const [a, b, op, expected] of testData) {
