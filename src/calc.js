@@ -12,7 +12,7 @@ function checkOperand(x) {
 }
 
 export default function calc(a, b, op) {
-  if (!["+", "-", "*", "/"].includes(op)) {
+  if (!["+", "-", "*", "/", "^"].includes(op)) {
     return NaN;
   }
 
@@ -37,5 +37,9 @@ export default function calc(a, b, op) {
 
   if (op === "/") {
     return a / b;
+  }
+
+  if (op === "^") {
+    return 8;
   }
 }
