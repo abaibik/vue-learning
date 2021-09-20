@@ -38,6 +38,7 @@
 
 <script>
 import OpButtonGroup from "./components/OpButtonGroup.vue";
+import calc from "./calc.js";
 
 export default {
   data() {
@@ -45,12 +46,17 @@ export default {
       operand1: 0,
       operand2: 0,
       operation: "+",
-      result: 0,
     };
   },
 
   components: {
     OpButtonGroup,
+  },
+
+  computed: {
+    result: function () {
+      return calc(this.operand1, this.operand2, this.operation);
+    },
   },
 };
 </script>

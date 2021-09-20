@@ -20,6 +20,9 @@ export default function calc(a, b, op) {
     return NaN;
   }
 
+  a = parseInt(a);
+  b = parseInt(b);
+
   if (op === "+") {
     return a + b;
   }
