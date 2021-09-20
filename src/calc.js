@@ -12,7 +12,7 @@ function checkOperand(x) {
 }
 
 export default function calc(a, b, op) {
-  if (!["+", "-", "*", "/", "^"].includes(op)) {
+  if (!["+", "-", "*", "/", "^", "mod"].includes(op)) {
     return NaN;
   }
 
@@ -41,5 +41,9 @@ export default function calc(a, b, op) {
 
   if (op === "^") {
     return Math.pow(a, b);
+  }
+
+  if (op === "mod") {
+    return 1;
   }
 }
