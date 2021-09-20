@@ -35,6 +35,8 @@
     </div>
 
     <CheckBox v-model="keyboardVisible" />
+
+    <Keyboard v-model="keyboardVisible" />
   </div>
 </template>
 
@@ -42,6 +44,7 @@
 import OpButtonGroup from "./components/OpButtonGroup.vue";
 import calc from "./calc.js";
 import CheckBox from "./components/CheckBox.vue";
+import Keyboard from "./components/Keyboard.vue";
 
 export default {
   name: "App",
@@ -57,6 +60,7 @@ export default {
   components: {
     OpButtonGroup,
     CheckBox,
+    Keyboard,
   },
 
   computed: {

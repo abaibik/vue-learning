@@ -5,7 +5,7 @@
       type="checkbox"
       value=""
       id="flexCheckDefault"
-      v-model="checked"
+      :checked="checked"
       @change="$emit('change', !checked)"
     />
     <label class="form-check-label" for="flexCheckDefault">
