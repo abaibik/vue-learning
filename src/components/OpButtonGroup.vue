@@ -1,7 +1,7 @@
 <template>
   <div class="btn-group mb-3" role="group" aria-label="Basic outlined example">
     <OpButton
-      v-for="op in ['+', '-', '*', '/']"
+      v-for="op in ['+', '-', '*', '/', '^']"
       :key="op"
       :operation="op"
       :toggled="op === operation"
