@@ -24,4 +24,15 @@ describe("OpButton.vue", () => {
     expect(wrapper.classes("btn")).toBe(true);
     expect(wrapper.classes("btn-outline-success")).toBe(true);
   });
+
+  it("emits operations when clicked", async () => {
+    const wrapper = shallowMount(OpButton, {
+      propsData: { operation: "+", toggled: false },
+    });
+    await wrapper.trigger("click");
+    await wrapper.vm.$nextTick();
+    expect(wrapper.emitted().operation).toBeTruthy();
+    expect(wrapper.emitted().operation.length).toBe(1);
+    expect(wrapper.emitted().operation[0]).toEqual(["+"]);
+  });
 });
