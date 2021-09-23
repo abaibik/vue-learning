@@ -10,6 +10,12 @@
   </div>
 </template>
 
+<style>
+.offcanvas-backdrop.show {
+  opacity: 0 !important;
+}
+</style>
+
 <script>
 import OpButton from "./OpButton.vue";
 

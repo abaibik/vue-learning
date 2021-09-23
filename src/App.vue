@@ -36,7 +36,12 @@
 
     <CheckBox v-model="keyboardVisible" />
 
-    <Keyboard v-model="keyboardVisible" />
+    <Keyboard
+      v-model="keyboardVisible"
+      :inputs="['operand1', 'operand2']"
+      :activeInput="activeInput"
+      @activeInputChanged="activeInput = $event"
+    />
   </div>
 </template>
 
@@ -54,6 +59,7 @@ export default {
       operand2: 0,
       operation: "+",
       keyboardVisible: false,
+      activeInput: "operand1",
     };
   },
 
