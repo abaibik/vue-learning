@@ -41,7 +41,7 @@
       :inputs="['operand1', 'operand2']"
       :activeInput="activeInput"
       @activeInputChanged="activeInput = $event"
-      @keyPressed=""
+      @keyPressed="handleInput($event)"
     />
   </div>
 </template>
@@ -51,13 +51,14 @@ import OpButtonGroup from "./components/OpButtonGroup.vue";
 import calc from "./calc.js";
 import CheckBox from "./components/CheckBox.vue";
 import Keyboard from "./components/Keyboard.vue";
+import keyboardHandler from "./keyboardHandler.js";
 
 export default {
   name: "App",
   data() {
     return {
-      operand1: 0,
-      operand2: 0,
+      operand1: "0",
+      operand2: "0",
       operation: "+",
       keyboardVisible: false,
       activeInput: "operand1",
@@ -73,6 +74,14 @@ export default {
   computed: {
     result: function () {
       return calc(this.operand1, this.operand2, this.operation);
+    },
+  },
+
+  methods: {
+    handleInput: function (key) {
+      if (this.activeInput === "operand1") {
+        this.operand1 = keyboardHandler(this.operand1, key);
+      }
     },
   },
 };
