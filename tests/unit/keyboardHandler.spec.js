@@ -7,4 +7,7 @@ describe("keyboardHandler", () => {
   it("returns 12 when currentInputValue=1 and key=2", () => {
     expect(keyboardHandler("1", "2")).toBe("12");
   });
+  it("returns 2 when currentInputValue=21 and key=del", () => {
+    expect(keyboardHandler("21", "del")).toBe("2");
+  });
 });
