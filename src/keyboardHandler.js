@@ -5,5 +5,8 @@ export default function keyboardHandler(currentInputValue, key) {
     }
     return currentInputValue.slice(0, -1);
   }
+  if (currentInputValue === "0") {
+    return key;
+  }
   return currentInputValue + key;
 }

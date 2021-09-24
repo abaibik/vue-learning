@@ -13,4 +13,7 @@ describe("keyboardHandler", () => {
   it("returns 0 when currentInputValue=1 and key=del", () => {
     expect(keyboardHandler("1", "del")).toBe("0");
   });
+  it("returns 6 when currentInputValue=0 and key=6", () => {
+    expect(keyboardHandler("0", "6")).toBe("6");
+  });
 });
