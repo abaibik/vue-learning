@@ -1,6 +1,6 @@
 <template>
-  <button @click="$emit('pressed', value)" class="btn btn-outline-info">
-    {{ value }}
+  <button @click="$emit('pressed', value)" class="btn btn-outline-info m-1">
+    <span v-html="value"></span>
   </button>
 </template>
 

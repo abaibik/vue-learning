@@ -41,6 +41,7 @@
       :inputs="['operand1', 'operand2']"
       :activeInput="activeInput"
       @activeInputChanged="activeInput = $event"
+      @keyPressed=""
     />
   </div>
 </template>

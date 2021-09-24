@@ -21,6 +21,24 @@
         :chosenInput="activeInput"
         @chosenInputChanged="$emit('activeInputChanged', $event)"
       />
+      <KeyboardButton
+        v-for="value in [
+          '0',
+          '1',
+          '2',
+          '3',
+          '4',
+          '5',
+          '6',
+          '7',
+          '8',
+          '9',
+          '&#8592;',
+        ]"
+        :key="value"
+        :value="value"
+        @pressed="$emit('keyPressed', value)"
+      />
     </div>
   </div>
 </template>
@@ -28,11 +46,12 @@
 <script>
 import { Offcanvas } from "bootstrap";
 import InputChooser from "./InputChooser.vue";
+import KeyboardButton from "./KeyboardButton.vue";
 
 export default {
-  components: { InputChooser },
+  components: { InputChooser, KeyboardButton },
   name: "Keyboard",
-  emits: ["activeInputChanged"],
+  emits: ["activeInputChanged", "keyPressed"],
   props: {
     visible: Boolean,
     inputs: Array,
