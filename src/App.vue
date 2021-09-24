@@ -81,6 +81,8 @@ export default {
     handleInput: function (key) {
       if (this.activeInput === "operand1") {
         this.operand1 = keyboardHandler(this.operand1, key);
+      } else {
+        this.operand2 = keyboardHandler(this.operand2, key);
       }
     },
   },
