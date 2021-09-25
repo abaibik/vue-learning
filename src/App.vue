@@ -73,7 +73,12 @@ export default {
 
   computed: {
     result: function () {
-      return calc(this.operand1, this.operand2, this.operation);
+      const res = calc(this.operand1, this.operand2, this.operation);
+      if (isNaN(res)) {
+        return "Error!";
+      }
+
+      return res;
     },
   },
 
