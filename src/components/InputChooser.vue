@@ -7,11 +7,7 @@
         name="flexRadioDefault"
         :id="input"
         :checked="input === chosenInput"
-        @change="
-          if ($event.target.checked) {
-            $emit('chosenInputChanged', input);
-          }
-        "
+        @change="changeHandler($event, input)"
       />
       <label class="form-check-label" :for="input"> {{ input }}</label>
     </div>
@@ -25,6 +21,13 @@ export default {
   props: {
     inputs: Array,
     chosenInput: String,
+  },
+  methods: {
+    changeHandler($event, input) {
+      if ($event.target.checked) {
+        this.$emit("chosenInputChanged", input);
+      }
+    },
   },
 };
 </script>
